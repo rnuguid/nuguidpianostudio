@@ -22,10 +22,10 @@ import { Routes, RouterModule } from '@angular/router';
 		          <div class='nav_item'> <a routerLink="/calendar"    routerLinkActive="active"> Events       </a> </div>
 		          <div class='nav_item'> <a routerLink="/forStudents" routerLinkActive="active"> For Students </a> 
 		            <div class='sub_menu'>      
-		              <div class='sub_menu_item'> <a routerLink="/forStudents/rcalendar" routerLinkActive='active'> Rosanna's Teaching Schedule </a> </div>
+		              <div class='sub_menu_item'> <a routerLink="/alumni" routerLinkActive='active'> Rosanna's Teaching Schedule </a> </div>
 		              <div class='sub_menu_item'> <a routerLink="/forStudents/hcalendar" routerLinkActive='active'> Horacio's Teaching Schedule </a> </div>
-		              <div class='sub_menu_item'> <a routerLink="/forStudents/resources" routerLinkActive='active'> Important Resources </a> </div>
-                      <div class='sub_menu_item'> <a routerLink="/forStudents/fingerings" routerLinkActive='active'> Standard Fingerings </a> </div>
+		              <div class='sub_menu_item'> <a routerLink="/alumni" routerLinkActive='active'> Important Resources </a> </div>
+                      <div class='sub_menu_item'> <a routerLink="/alumni" routerLinkActive='active'> Standard Fingerings </a> </div>
 		            </div>
 		          </div>
 	          </nav> 
