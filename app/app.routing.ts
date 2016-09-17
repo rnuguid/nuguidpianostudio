@@ -1,23 +1,23 @@
 import { RouterModule, Routes } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 import { HomeComponent } from './home.component';
-import { AboutComponent } from './about.component';
-import { HomeSlideComponent } from './homeslide.component';
-import { RosannaComponent, HoracioComponent } from './about.component';
+import { HoracioComponent } from './horacio.component';
+import { RosannaComponent } from './rosanna.component';
 import { AlumniComponent } from './alumni.component';
-import { CalendarComponent } from './calendar.component';
+import { EventsComponent } from './events.component';
 import { AdmissionComponent } from './admission.component';
-import { HoracioCalendar } from './horacio.calendar.component';
-
+import { HoracioCalendarComponent } from './horacio-calendar.component';
+import { UnderConstructionComponent } from './under-construction.component';
 
 const my_routes: Routes = [
 	{path: 'home', component: HomeComponent },
     {path: 'admissions', component: AdmissionComponent },
-    {path: 'about/horacio', component: HoracioComponent },
-    {path: 'about/rosanna', component: RosannaComponent },
-	{path: 'calendar', component: CalendarComponent },
+    {path: 'horacio', component: HoracioComponent },
+    {path: 'rosanna', component: RosannaComponent },
+	{path: 'events', component: EventsComponent },
 	{path: 'alumni', component: AlumniComponent },
-	{path: 'forStudents/hcalendar', component: HoracioCalendar }
+	{path: 'horacio-calendar', component: HoracioCalendarComponent }
+	{path: 'under-construction', component: UnderConstructionComponent }
 //	{path: 'current-students', component: CurrentStudentsComponent },
 ]
 

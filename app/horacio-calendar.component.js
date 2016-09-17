@@ -9,17 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var HomeSlideComponent = (function () {
-    function HomeSlideComponent() {
+var HoracioCalendarComponent = (function () {
+    function HoracioCalendarComponent() {
     }
-    HomeSlideComponent = __decorate([
-        core_1.Component({
-            selector: 'homeslide',
-            template: "\n      <div class=\"bio\">\n      <h1> Studio Calendar </h1>\n<iframe src=\"https://calendar.google.com/calendar/embed?src=nsqfrhotgvb2hfkvgksbo1jh80%40group.calendar.google.com&ctz=America/Los_Angeles\" style=\"border: 0\" width=\"800\" height=\"600\" frameborder=\"0\" scrolling=\"no\"></iframe>\n\t  </div>\n\t  "
+    HoracioCalendarComponent = __decorate([
+        core_1.Component({ selector: 'horacio-calendar',
+            template: "\n<div class='bio'>\n<h1> H's Teaching Schedule </h1>\n<iframe src=\"https://calendar.google.com/calendar/embed?showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=i7iokjuq0g2hnehd2unp366ano%40group.calendar.google.com&amp;color=%23A32929&amp;ctz=America%2FChicago\" style=\"border-width:0\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>\n</div>"
         }), 
         __metadata('design:paramtypes', [])
-    ], HomeSlideComponent);
-    return HomeSlideComponent;
+    ], HoracioCalendarComponent);
+    return HoracioCalendarComponent;
 }());
-exports.HomeSlideComponent = HomeSlideComponent;
-//# sourceMappingURL=homeslide.component.js.map
+exports.HoracioCalendarComponent = HoracioCalendarComponent;
+//# sourceMappingURL=horacio-calendar.component.js.map

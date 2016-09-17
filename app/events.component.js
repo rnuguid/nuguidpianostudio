@@ -9,17 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var CalendarComponent = (function () {
-    function CalendarComponent() {
+var EventsComponent = (function () {
+    function EventsComponent() {
     }
-    CalendarComponent = __decorate([
+    EventsComponent = __decorate([
         core_1.Component({
-            selector: 'calendar',
-            templateUrl: './app/coe.html'
+            selector: 'events',
+            templateUrl: './app/events.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], CalendarComponent);
-    return CalendarComponent;
+    ], EventsComponent);
+    return EventsComponent;
 }());
-exports.CalendarComponent = CalendarComponent;
-//# sourceMappingURL=calendar.component.js.map
+exports.EventsComponent = EventsComponent;
+//# sourceMappingURL=events.component.js.map

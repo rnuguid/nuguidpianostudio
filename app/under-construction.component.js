@@ -9,16 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var HoracioCalendar = (function () {
-    function HoracioCalendar() {
+var UnderConstructionComponent = (function () {
+    function UnderConstructionComponent() {
     }
-    HoracioCalendar = __decorate([
-        core_1.Component({ selector: 'horacio-calendar',
-            template: "\n<div class='bio'>\n<h1> H's Teaching Schedule </h1>\n<iframe src=\"https://calendar.google.com/calendar/embed?showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=i7iokjuq0g2hnehd2unp366ano%40group.calendar.google.com&amp;color=%23A32929&amp;ctz=America%2FChicago\" style=\"border-width:0\" width=\"100%\" height=\"100%\" frameborder=\"0\" scrolling=\"no\"></iframe>\n</div>"
+    UnderConstructionComponent = __decorate([
+        core_1.Component({
+            selector: 'under-construction',
+            template: "\n      <div class=\"bio\">\n      <h1> Under Construction </h1>\n      <p>\n      Coming Soon\n      </p>\n      </div>\n\t  "
         }), 
         __metadata('design:paramtypes', [])
-    ], HoracioCalendar);
-    return HoracioCalendar;
+    ], UnderConstructionComponent);
+    return UnderConstructionComponent;
 }());
-exports.HoracioCalendar = HoracioCalendar;
-//# sourceMappingURL=horacio.calendar.component.js.map
+exports.UnderConstructionComponent = UnderConstructionComponent;
+;
+//# sourceMappingURL=under-construction.component.js.map

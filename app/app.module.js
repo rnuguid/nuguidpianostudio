@@ -11,22 +11,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
-var homeslide_component_1 = require('./homeslide.component');
 var home_component_1 = require('./home.component');
 var app_routing_1 = require('./app.routing');
-var about_component_1 = require('./about.component');
+var horacio_component_1 = require('./horacio.component');
+var rosanna_component_1 = require('./rosanna.component');
 var alumni_component_1 = require('./alumni.component');
-var calendar_component_1 = require('./calendar.component');
+var events_component_1 = require('./events.component');
 var admission_component_1 = require('./admission.component');
-var stateselect_component_1 = require('./stateselect.component');
-var horacio_calendar_component_1 = require('./horacio.calendar.component');
+var state_select_component_1 = require('./state-select.component');
+var horacio_calendar_component_1 = require('./horacio-calendar.component');
+var under_construction_component_1 = require('./under-construction.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, app_routing_1.routing],
-            declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, homeslide_component_1.HomeSlideComponent, about_component_1.HoracioComponent, about_component_1.RosannaComponent, alumni_component_1.AlumniComponent, calendar_component_1.CalendarComponent, admission_component_1.AdmissionComponent, stateselect_component_1.StateSelect, horacio_calendar_component_1.HoracioCalendar],
+            declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, horacio_component_1.HoracioComponent, rosanna_component_1.RosannaComponent, alumni_component_1.AlumniComponent, events_component_1.EventsComponent, admission_component_1.AdmissionComponent, state_select_component_1.StateSelectComponent, horacio_calendar_component_1.HoracioCalendarComponent, under_construction_component_1.UnderConstructionComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

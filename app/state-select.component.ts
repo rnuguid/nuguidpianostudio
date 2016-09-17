@@ -57,4 +57,4 @@ template:
 	<option value="WY">Wyoming</option>
 </select>`
 })
-export class StateSelect { };
+export class StateSelectComponent { };
