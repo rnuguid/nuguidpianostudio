@@ -15,7 +15,7 @@ var EventsComponent = (function () {
     EventsComponent = __decorate([
         core_1.Component({
             selector: 'events',
-            templateUrl: './app/events.html'
+            templateUrl: './app/events.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], EventsComponent);

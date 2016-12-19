@@ -15,7 +15,7 @@ var UnderConstructionComponent = (function () {
     UnderConstructionComponent = __decorate([
         core_1.Component({
             selector: 'under-construction',
-            template: "\n      <div class=\"bio\">\n      <h1> Under Construction </h1>\n      <p>\n      Coming Soon\n      </p>\n      </div>\n\t  "
+            templateUrl: 'app/under-construction.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], UnderConstructionComponent);

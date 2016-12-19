@@ -15,7 +15,7 @@ var AdmissionComponent = (function () {
     AdmissionComponent = __decorate([
         core_1.Component({
             selector: 'admission',
-            templateUrl: './app/admission.html' }), 
+            templateUrl: './app/admission.component.html' }), 
         __metadata('design:paramtypes', [])
     ], AdmissionComponent);
     return AdmissionComponent;

@@ -1,22 +1,5 @@
 /* Master Styles */
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
-}
-h2, h3 {
-  color: #444;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
-}
-body {
-  margin:0;
-  padding:0;
-}
-a {
-  text-decoration: none;
-  color: black;
-}
+
 #main{
   background-image: url('../img/studio-background.jpg');
   position:fixed;
@@ -187,43 +170,4 @@ a {
   padding: 0;
   text-align: center;
 
-}
-input, select {
-  width: 80%;
-  height: 15%;
-  position: relative;
-  left:10%;
-  border-radius: 10px;
-  margin: 5px;
-  padding: 4px;
-  font-family: "News Cycle";
-  font-size: 15pt;
-}
-textarea {
-  width:80%;
-  height:45%;
-  position:relative;
-  left:10%;
-  border-radius:10px;
-  font-family:"News Cycle";
-  font-size:15pt;
-  margin: 5px;
-  padding: 4px;
-}
-.left_form_label {
-  font-family: "News Cycle";
-  color: black;
-  padding: 0;
-  margin: 0;
-  width: 15%;
-  float: left;
-  text-align: right;
-}
-.right_form_label {
-  font-family: "News Cycle";
-  color: black;
-  padding: 0;
-  width: 15%;
-  float: right;
-  text-align: left;
 }

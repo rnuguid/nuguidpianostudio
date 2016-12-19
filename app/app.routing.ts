@@ -16,7 +16,7 @@ const my_routes: Routes = [
     {path: 'rosanna', component: RosannaComponent },
 	{path: 'events', component: EventsComponent },
 	{path: 'alumni', component: AlumniComponent },
-	{path: 'horacio-calendar', component: HoracioCalendarComponent }
+	{path: 'horacio-calendar', component: HoracioCalendarComponent },
 	{path: 'under-construction', component: UnderConstructionComponent }
 //	{path: 'current-students', component: CurrentStudentsComponent },
 ]
