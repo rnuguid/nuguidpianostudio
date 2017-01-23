@@ -7,6 +7,7 @@ import { AlumniComponent } from './alumni.component';
 import { EventsComponent } from './events.component';
 import { AdmissionComponent } from './admission.component';
 import { HoracioCalendarComponent } from './horacio-calendar.component';
+import { RosannaCalendarComponent } from './rosanna-calendar.component';
 import { UnderConstructionComponent } from './under-construction.component';
 import { SnowDayPolicyComponent } from './snow-day-policy.component';
 
@@ -18,8 +19,9 @@ const my_routes: Routes = [
 	{path: 'events', component: EventsComponent },
 	{path: 'alumni', component: AlumniComponent },
 	{path: 'horacio-calendar', component: HoracioCalendarComponent },
+	{path: 'rosanna-calendar', component: RosannaCalendarComponent },
 	{path: 'under-construction', component: UnderConstructionComponent },
-	{path: 'snow-day-policy', component: SnowDayPolicyComponent }
+	{path: 'snow-day-policy', component: SnowDayPolicyComponent },
 //	{path: 'current-students', component: CurrentStudentsComponent },
 ]
 

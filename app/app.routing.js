@@ -7,6 +7,7 @@ var alumni_component_1 = require('./alumni.component');
 var events_component_1 = require('./events.component');
 var admission_component_1 = require('./admission.component');
 var horacio_calendar_component_1 = require('./horacio-calendar.component');
+var rosanna_calendar_component_1 = require('./rosanna-calendar.component');
 var under_construction_component_1 = require('./under-construction.component');
 var snow_day_policy_component_1 = require('./snow-day-policy.component');
 var my_routes = [
@@ -17,8 +18,9 @@ var my_routes = [
     { path: 'events', component: events_component_1.EventsComponent },
     { path: 'alumni', component: alumni_component_1.AlumniComponent },
     { path: 'horacio-calendar', component: horacio_calendar_component_1.HoracioCalendarComponent },
+    { path: 'rosanna-calendar', component: rosanna_calendar_component_1.RosannaCalendarComponent },
     { path: 'under-construction', component: under_construction_component_1.UnderConstructionComponent },
-    { path: 'snow-day-policy', component: snow_day_policy_component_1.SnowDayPolicyComponent }
+    { path: 'snow-day-policy', component: snow_day_policy_component_1.SnowDayPolicyComponent },
 ];
 exports.routing = router_1.RouterModule.forRoot(my_routes);
 //# sourceMappingURL=app.routing.js.map
