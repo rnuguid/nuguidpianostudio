@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { RouterModule, Routes } from '@angular/router';
+//import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { routing } from './app.routing';
 import { HoracioComponent } from './horacio.component';
@@ -12,10 +12,13 @@ import { AdmissionComponent } from './admission.component';
 import { StateSelectComponent } from './state-select.component';
 import { HoracioCalendarComponent } from './horacio-calendar.component';
 import { UnderConstructionComponent } from './under-construction.component';
+import { TestPhpComponent } from './test-php.component';
+
+import { HttpModule } from '@angular/http';
 
 @NgModule({
-	imports:   [ BrowserModule, routing ],
-	declarations: [ AppComponent, HomeComponent, HoracioComponent, RosannaComponent, AlumniComponent, EventsComponent, AdmissionComponent, StateSelectComponent, HoracioCalendarComponent, UnderConstructionComponent ],
+	imports:   [ BrowserModule, routing, HttpModule ],
+	declarations: [ AppComponent, HomeComponent, HoracioComponent, RosannaComponent, AlumniComponent, EventsComponent, AdmissionComponent, StateSelectComponent, HoracioCalendarComponent, UnderConstructionComponent, TestPhpComponent ],
 	bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

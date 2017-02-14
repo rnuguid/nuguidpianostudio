@@ -9,17 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AlumniComponent = (function () {
-    function AlumniComponent() {
+var AdminComponent = (function () {
+    function AdminComponent() {
     }
-    AlumniComponent = __decorate([
+    AdminComponent = __decorate([
         core_1.Component({
-            selector: 'alumni',
-            templateUrl: 'app/alumni.component.test.html'
+            selector: 'admin',
+            templateUrl: 'app/admin.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AlumniComponent);
-    return AlumniComponent;
+    ], AdminComponent);
+    return AdminComponent;
 }());
-exports.AlumniComponent = AlumniComponent;
-//# sourceMappingURL=alumni.component.js.map
+exports.AdminComponent = AdminComponent;
+;
+//# sourceMappingURL=admin.component.js.map
