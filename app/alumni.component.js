@@ -15,7 +15,7 @@ var AlumniComponent = (function () {
     AlumniComponent = __decorate([
         core_1.Component({
             selector: 'alumni',
-            templateUrl: 'app/alumni.component.test.html'
+            templateUrl: 'app/alumni.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], AlumniComponent);
