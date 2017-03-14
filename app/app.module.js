@@ -10,10 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-//import { RouterModule, Routes } from '@angular/router';
-var home_component_1 = require('./home.component');
+var forms_1 = require('@angular/forms');
+var http_1 = require('@angular/http');
 var app_routing_1 = require('./app.routing');
+var authentication_service_1 = require('./authentication.service');
+var file_getter_service_1 = require('./file-getter.service');
+var app_component_1 = require('./app.component');
+var home_component_1 = require('./home.component');
 var horacio_component_1 = require('./horacio.component');
 var rosanna_component_1 = require('./rosanna.component');
 var alumni_component_1 = require('./alumni.component');
@@ -22,16 +25,18 @@ var admission_component_1 = require('./admission.component');
 var state_select_component_1 = require('./state-select.component');
 var horacio_calendar_component_1 = require('./horacio-calendar.component');
 var under_construction_component_1 = require('./under-construction.component');
-var test_php_component_1 = require('./test-php.component');
-var http_1 = require('@angular/http');
+var admin_component_1 = require('./admin.component');
+var login_component_1 = require('./login.component');
+var editor_component_1 = require('./editor.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, app_routing_1.routing, http_1.HttpModule],
-            declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, horacio_component_1.HoracioComponent, rosanna_component_1.RosannaComponent, alumni_component_1.AlumniComponent, events_component_1.EventsComponent, admission_component_1.AdmissionComponent, state_select_component_1.StateSelectComponent, horacio_calendar_component_1.HoracioCalendarComponent, under_construction_component_1.UnderConstructionComponent, test_php_component_1.TestPhpComponent],
-            bootstrap: [app_component_1.AppComponent]
+            imports: [platform_browser_1.BrowserModule, app_routing_1.routing, http_1.HttpModule, forms_1.FormsModule, http_1.JsonpModule],
+            declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, horacio_component_1.HoracioComponent, rosanna_component_1.RosannaComponent, alumni_component_1.AlumniComponent, events_component_1.EventsComponent, admission_component_1.AdmissionComponent, state_select_component_1.StateSelectComponent, horacio_calendar_component_1.HoracioCalendarComponent, under_construction_component_1.UnderConstructionComponent, admin_component_1.AdminComponent, login_component_1.LoginComponent, editor_component_1.EditorComponent],
+            bootstrap: [app_component_1.AppComponent],
+            providers: [authentication_service_1.AuthenticationService, http_1.HTTP_PROVIDERS, file_getter_service_1.FileGetterService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

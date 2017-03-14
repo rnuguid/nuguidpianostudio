@@ -10,7 +10,7 @@ var horacio_calendar_component_1 = require('./horacio-calendar.component');
 var rosanna_calendar_component_1 = require('./rosanna-calendar.component');
 var under_construction_component_1 = require('./under-construction.component');
 var snow_day_policy_component_1 = require('./snow-day-policy.component');
-var test_php_component_1 = require('./test-php.component');
+var admin_component_1 = require('./admin.component');
 var my_routes = [
     { path: 'home', component: home_component_1.HomeComponent },
     { path: 'admissions', component: admission_component_1.AdmissionComponent },
@@ -23,7 +23,7 @@ var my_routes = [
     //	{path: 'under-construction', component: UnderConstructionComponent },
     { path: 'under-construction', component: under_construction_component_1.UnderConstructionComponent },
     { path: 'snow-day-policy', component: snow_day_policy_component_1.SnowDayPolicyComponent },
-    { path: 'admin', component: test_php_component_1.TestPhpComponent }
+    { path: 'admin', component: admin_component_1.AdminComponent }
 ];
 exports.routing = router_1.RouterModule.forRoot(my_routes);
 //# sourceMappingURL=app.routing.js.map

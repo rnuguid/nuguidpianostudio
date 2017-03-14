@@ -9,15 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var file_getter_service_1 = require('./file-getter.service');
+require('rxjs/add/operator/map');
+require('rxjs/add/operator/catch');
 var EventsComponent = (function () {
-    function EventsComponent() {
+    function EventsComponent(file_getter) {
+        var _this = this;
+        this.file_getter = file_getter;
+        file_getter.getObservableDat('events.txt').subscribe(function (x) { _this.events_txt = x.text(); });
     }
     EventsComponent = __decorate([
         core_1.Component({
             selector: 'events',
             templateUrl: './app/events.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [file_getter_service_1.FileGetterService])
     ], EventsComponent);
     return EventsComponent;
 }());

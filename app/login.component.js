@@ -9,23 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+require('rxjs/add/operator/map');
+require('rxjs/add/operator/catch');
 var authentication_service_1 = require('./authentication.service');
-var AdminComponent = (function () {
-    function AdminComponent(auth) {
-        this.auth = auth;
+var http_1 = require('@angular/http');
+var LoginComponent = (function () {
+    function LoginComponent(auth_service) {
+        this.auth_service = auth_service;
     }
-    AdminComponent.prototype.isLoggedIn = function () {
-        return this.auth.checkAuth();
+    LoginComponent.prototype.onSubmit = function () {
+        this.auth_service.login(this.username, this.password);
+        //   .subscribe( x => {this.hrm = x.text() });
     };
-    AdminComponent = __decorate([
+    LoginComponent = __decorate([
         core_1.Component({
-            selector: 'admin',
-            templateUrl: 'app/admin.component.html'
+            selector: "login",
+            templateUrl: "app/login.component.html",
+            providers: [http_1.HTTP_PROVIDERS]
         }), 
         __metadata('design:paramtypes', [authentication_service_1.AuthenticationService])
-    ], AdminComponent);
-    return AdminComponent;
+    ], LoginComponent);
+    return LoginComponent;
 }());
-exports.AdminComponent = AdminComponent;
-;
-//# sourceMappingURL=admin.component.js.map
+exports.LoginComponent = LoginComponent;
+//# sourceMappingURL=login.component.js.map

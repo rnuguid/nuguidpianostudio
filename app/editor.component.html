@@ -1,0 +1,15 @@
+<div>
+
+<form (ngSubmit)="onSubmit(myform);" #myform="ngForm">
+    <div class="form-group">
+        <label> Events Editor </label>
+        <textarea class="form-control"  rows="10" name="pianostudies" required #pianostudies="ngModel" [(ngModel)]="editor_events_txt">
+        </textarea>
+    </div>
+    <input type="button" class="btn btn-default"  id="reset" value="Reset Changes" [disabled]="pianostudies.pristine" (click)="reset(myform)" />
+    <input type="submit" class="btn btn-default"  id="submit" value="Update" [disabled]="pianostudies.pristine" />
+    <div class="alert alert-success" [hidden]="!is_successful || !pianostudies.pristine" role="alert"> 
+        Changes saved! <span class='glyphicon glyphicon-ok'> </span> 
+    </div>
+</form>
+</div>

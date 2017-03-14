@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from './authentication.service';
 
 @Component({
 	selector: 'admin',
@@ -6,6 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AdminComponent{
     
+    
+    constructor(private auth : AuthenticationService){
+    }
+
+
+    isLoggedIn(){
+        return this.auth.checkAuth()
+    }
+
+
 
 
 };

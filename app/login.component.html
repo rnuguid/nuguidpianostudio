@@ -1,0 +1,17 @@
+<form (ngSubmit)="onSubmit()" #myform="ngForm">
+	<div class="form-group">
+		<label for="exampleInputEmail1">Username</label>
+		<input type="text" class="form-control" id="exampleInputEmail1" placeholder="Username" name="user"
+		required #user="ngModel"
+		[(ngModel)]="username"/>
+		<div class="alert alert-danger" role="alert" [hidden]="user.valid || user.pristine">Username is required</div>
+	</div>
+	<div class="form-group">
+		<label for="exampleInputPassword1">Password</label>
+		<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="pass"
+		required #pass="ngModel"
+		[(ngModel)]="password"/>
+		<div class="alert alert-danger" role="alert" [hidden]="pass.valid || pass.pristine">Password is required</div>
+	</div>
+	<button type="submit" class="btn btn-default" [disabled]="!myform.valid">Submit</button>
+</form>
