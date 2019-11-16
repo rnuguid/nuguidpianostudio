@@ -1,0 +1,69 @@
+Hello, world!
+<div id="main">           
+  <nav class="navbar navbar-default navbar-fixed-top" style="background-color:rgba(255,255,255,.97); border-bottom:2px solid black">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand">
+          <p> the Nuguid Piano Studio </p>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li> <a routerLink="/home" routerLinkActive="active"> Home </a></li>
+          <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Teachers <span class="caret"></span></a>
+            <ul class="dropdown-menu">      
+              <li> <a routerLink="/horacio" routerLinkActive='active'> Horacio Nuguid </a> </li>
+              <li> <a routerLink="/rosanna" routerLinkActive='active'> Rosanna Nuguid </a> </li>
+            </ul>
+          </li>
+          <li> <a routerLink="/admissions"  routerLinkActive="active"> Admissions   </a> </li>
+          <li> <a routerLink="/events"    routerLinkActive="active"> Calendar       </a> </li>
+          <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Weekly Schedule <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li> <a routerLink="/rosanna-calendar" routerLinkActive="active"> Mrs. Nuguid </a> </li>
+              <li> <a routerLink="/horacio-calendar" routerLinkActive="active>"> Dr. Nuguid </a></li>
+            </ul>
+          </li>
+          <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Policies <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li> <a href="/assets/pdf/StudioPolicy18-19.pdf"> Studio Policy </a> </li>
+              <li> <a routerLink="/snow-day-policy" routerLinkActive="active>"> Snow Day Policy </a></li>
+            </ul>
+          </li>
+          <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> MMTA Keyboard Skills <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li> <a href="/assets/pdf/ksPrep.pdf"> Level P </a> </li>
+              <li> <a href="/assets/pdf/ks1.pdf"> Level 1 </a> </li>
+              <li> <a href="/assets/pdf/ks2.pdf"> Level 2 </a> </li>
+              <li> <a href="/assets/pdf/ks3.pdf"> Level 3 </a> </li>
+              <li> <a href="/assets/pdf/ks4.pdf"> Level 4 </a> </li>
+              <li> <a href="/assets/pdf/ks5.pdf"> Level 5 </a> </li>
+              <li> <a href="/assets/pdf/ks6.pdf"> Level 6 </a> </li>
+              <li> <a href="/assets/pdf/ks7.pdf"> Level 7 </a> </li>
+              <li> <a href="/assets/pdf/ks8.pdf"> Level 8 </a> </li>
+              <li> <a href="/assets/pdf/ks9.pdf"> Level 9 </a> </li>
+              <li> <a href="/assets/pdf/ks10.pdf"> Level 10 </a> </li>
+              <li> <a href="/assets/pdf/ks11.pdf"> Level 11 </a> </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="main_body" class="container-fluid">
+  <router-outlet></router-outlet>
+  </div>
+  <nav class="navbar navbar-default navbar-fixed-bottom" style="background-color:rgba(255,255,255,.97); border-top:2px solid black">
+    <div class="container-fluid">
+      <ul class="navbar-nav nav navbar-right">
+        <li> <a> <small> Copyright &copy; 2020 Nuguid Piano Studio - All rights reserved </small> </a> </li>
+      </ul>
+    </div>
+  </nav>
+</div>
