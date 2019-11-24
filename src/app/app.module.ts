@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { HoracioComponent } from './horacio/horacio.component';
@@ -13,6 +14,7 @@ import { RosannaCalendarComponent } from './rosanna-calendar/rosanna-calendar.co
 import { SnowDayPolicyComponent } from './snow-day-policy/snow-day-policy.component';
 import { AdminComponent } from './admin/admin.component';
 import { CurrentStudentsComponent } from './current-students/current-students.component';
+import { StateSelectComponent } from './state-select/state-select.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +28,13 @@ import { CurrentStudentsComponent } from './current-students/current-students.co
     RosannaCalendarComponent,
     SnowDayPolicyComponent,
     AdminComponent,
-    CurrentStudentsComponent
+    CurrentStudentsComponent,
+    StateSelectComponent
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
