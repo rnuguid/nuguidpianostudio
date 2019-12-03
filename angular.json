@@ -24,9 +24,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"]
           },
           "configurations": {
             "production": {
@@ -89,9 +90,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [ 
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"]
           }
         },
         "lint": {
@@ -120,6 +122,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "nuguidpianostudio"
+    }
+  },
+  "defaultProject": "nuguidpianostudio",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

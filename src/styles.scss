@@ -1,0 +1,11 @@
+
+$font-family-sans-serif:      "News Cycle", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+@import "~bootstrap/scss/bootstrap";
+
+.ng-valid:not(.ng-pristine):not(.ng-untouched){
+  @extend .is-valid;
+}
+.ng-invalid:not(.ng-pristine):not(.ng-untouched){
+  @extend .is-invalid;
+}
