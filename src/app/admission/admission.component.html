@@ -5,72 +5,88 @@
       <div class="card-body">
 	<p class="card-text"> Mrs. Rosanna Nuguid offers 30 min and 45 min private lessons to K-8 students and pre-school students (by special arrangement).  Dr. Horacio Nuguid offers 1 hour private lessons to high school students and advanced adults.  To be considered for admission, complete the form below.  We will contact you to schedule try out lessons only if we have available space. For transfer students, we would need your current piano teacher to e-mail or call us with his/her recommendation.  Please note that submission of the information requested is not a guarantee for admission into the studio.</p>
 	<!-- <form name="admission" method="POST" action="https://formspree.io/horacionuguid@gmail.com" (ngSubmit)="onSubmit(myform);" #myform="ngForm"> -->
-	<form name="admission" method="POST" action="www.google.com" #myform="ngForm">
+	<form name="admission" method="POST" action="www.google.com" [formGroup]="myForm" #myform="ngForm">
 	  <input type="hidden" name="_cc" value="raf.nuguid@gmail.com"/>
 	  <input type="hidden" name="_cc" value="rosannanuguid@gmail.com"/>
 	  <div class="form-group">
 	    <label for="id_admission_name">Student Name</label>
-	    <input required type="text" class="form-control"  id="id_admission_name" name="admission_name" [(ngModel)]="myform.name" required/> 
+	    <input required type="text" class="form-control" id="id_admission_name" name="admission_name" formControlName="name" required/> 
 	   <div class="invalid-feedback">
              Student name is required.
            </div>
 	  </div>	
 	  <div class="form-group">
 	    <label for="id_admission_date">Birth Date (MM/DD/YYYY)</label>
-	    <input type="text" id="id_admission_date" class="form-control" placeholder="MM/DD/YYYY" [(ngModel)]="myform.bd" name="admission_date" required/> 
+	    <input type="date" id="id_admission_date" class="form-control" placeholder="MM/DD/YYYY" formControlName="birthDate"  name="admission_date" required/> 
 	  </div>
 	  <div class="form-group">
 	    <label for="id_admission_school">School Name</label>
-	    <input type="text" class="form-control" placeholder="school name" [(ngModel)]="myform.school" name="admission_school" required/>
+	    <input type="text" class="form-control" placeholder="school name" formControlName="schoolName" name="admission_school" required/>
 	  </div>
 	  <div class="form-group">
 	    <label for="id_admission_grade"> Grade of Student </label>
-	    <input type="text" class="form-control" placeholder="grade of student" [(ngModel)]="myform.grade" name="admission_grade" required/>
+            <select class="form-control" formControlName="grade" required style="max-width: 8em">
+	      <option value={{grade}} *ngFor="let grade of grades">{{grade}}</option>
+            </select>
+            <div class="invalid-feedback">
+             Grade level is required
+            </div>
 	  </div>
 	  <div class="form-group">
 	    <label for="id_admission_parent_1"> Guardian name (1) </label>
-	    <input type="text" class="form-control"  placeholder="guardian name (1)" [(ngModel)]="myform.gn1" name="admission_parent_1" required/> 
+	    <input type="text" class="form-control"  placeholder="guardian name (1)" formControlName="gname1" name="admission_parent_1" required/> 
 	  </div>
 	  <div class="form-group">
 	    <label for="id_admission_parent_2"> Guardian name (2) </label>
-	    <input type="text" class="form-control"  placeholder="guardian name (2)" [(ngModel)]="myform.gn2" name="admission_parent_2"/> 
+	    <input type="text" class="form-control"  placeholder="guardian name (2)" formControlName="gname2" name="admission_parent_2"/> 
 	  </div>
 	  <div class="form-group">
 	    <label for="id_admission_address"> Street Address </label>
-	    <input type="text" class="form-control"  placeholder="street address" [(ngModel)]="myform.sa" name="admission_address" required/>
+	    <input type="text" class="form-control"  placeholder="street address"  formControlName="sa" name="admission_address" required/>
 	  </div>
 	  <div class="form-group">
 	    <label for="id_admission_city"> City </label>
-	    <input type="text" class="form-control"  placeholder="city" [(ngModel)]="myform.city" name="admission_city" required/>
+	    <input type="text" class="form-control"  placeholder="city"  formControlName="city" name="admission_city" required/>
 	  </div>
 	  <div class="form-group">
 	    <label> State </label>
-	    <app-state-select></app-state-select>
+            <select class="form-control">
+	      <option *ngFor="let state of states" [value]="state.acr" [selected]="state.sel"> {{state.val}} </option>
+            </select>
 	  </div>
 	  <div class="form-group">
 	    <label for="id_admission_zip"> Zip Code </label>
-	    <input type="text" class="form-control"  placeholder="zip code" [(ngModel)]="myform.zip" name="admission_zip" required/>
+	    <input  id="id_admission_zip" type="text" class="form-control"  placeholder="zip code"  formControlName="zip" name="admission_zip" required/>
+            <div class="invalid-feedback">
+              Please provide 5-digit zip code.
+            </div>
 	  </div>
 	  <div class="form-group">
 	    <label for="id_admission_phone"> Phone # </label>
-	    <input type="text" class="form-control"  placeholder="phone #" [(ngModel)]="myform.phone" name="admission_phone" required/> 
+	    <input type="tel" class="form-control" [mask]="'{+1} ([000]) [000] [0000]'" (maskFilled)=mf($event) placeholder="phone #"  formControlName="phone" name="admission_phone" required/> 
+	    <div class="invalid-feedback">
+              Please provide a valid phone number.
+            </div>
 	  </div>
 	  <div class="form-group">
 	    <label for="id_admission_email"> Email </label>
-	    <input type="text" class="form-control"  placeholder="email" [(ngModel)]="myform.email" name="admission_email" required/>
+	    <input type="e-mail" class="form-control"  placeholder="email"  formControlName="email" name="admission_email" autocomplete="email" required/>
+            <div class="invalid-feedback">
+              Please provide a valid e-mail address.
+            </div>
 	  </div>
 	  <div class="form-group">
 	    <label> Describe any prior piano studies (please include names of teachers) </label>
-	    <textarea class="form-control"  name="pianostudies" placeholder="describe any prior piano studies (please include names of teachers)" style="height:10rem"></textarea>
+	    <textarea class="form-control" formControlName="pianostudies"  name="pianostudies" placeholder="describe any prior piano studies (please include names of teachers)" style="height:10rem"></textarea>
 	  </div>
 	  <div class="form-group">
 	    <label> Please list all current musical activities </label>
-	    <textarea class="form-control"  name="musicalact" placeholder="please list all current musical activities" style="height:10rem"></textarea>
+	    <textarea class="form-control"  name="musicalact" formControlName="musicalact" placeholder="please list all current musical activities" style="height:10rem"></textarea>
 	  </div>
 
 	  <div class="form-group">
 	    <label> Please list any other extracurricular activities </label>
-	    <textarea class="form-control"  name="extracurr" placeholder="please list any other extracurricular activities" style="height:10rem"></textarea>
+	    <textarea class="form-control"  name="extracurr" formControlName="extracurr" placeholder="please list any other extracurricular activities" style="height:10rem"></textarea>
 	  </div>
 	  <button type="submit" class="btn btn-primary" value="Apply"  id="submit"> Apply </button>
 	</form>

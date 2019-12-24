@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { HoracioComponent } from './horacio/horacio.component';
@@ -15,6 +16,7 @@ import { SnowDayPolicyComponent } from './snow-day-policy/snow-day-policy.compon
 import { AdminComponent } from './admin/admin.component';
 import { CurrentStudentsComponent } from './current-students/current-students.component';
 import { StateSelectComponent } from './state-select/state-select.component';
+import { InputMaskAngularModule } from 'input-mask-angular';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { StateSelectComponent } from './state-select/state-select.component';
   imports: [
     BrowserModule,
     routing,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    InputMaskAngularModule
   ],
   providers: [],
   bootstrap: [AppComponent]
