@@ -3,9 +3,9 @@ $font-family-sans-serif:      "News Cycle", -apple-system, BlinkMacSystemFont, "
 
 @import "~bootstrap/scss/bootstrap";
 
-.ng-valid:not(.ng-pristine):not(.ng-untouched){
+.ng-valid:not(.ng-untouched):not(.no-validate){
   @extend .is-valid;
 }
-.ng-invalid:not(.ng-pristine):not(.ng-untouched){
+.ng-invalid:not(.ng-untouched){
   @extend .is-invalid;
 }

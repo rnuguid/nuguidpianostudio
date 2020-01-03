@@ -1,0 +1,16 @@
+<table class="table table-striped table-bordered">
+  <tbody> 
+    <tr>
+      <th> Time (PM) </th>
+      <th *ngFor="let day of days"> {{day}} </th>
+    </tr>
+    <ng-container *ngFor="let time of mTimes">
+      <tr>
+	<td> {{time.toString()}} </td>
+	<ng-container *ngFor="let day of days">
+	  <td *ngIf="mSlots && mSlots[day] && mSlots[day][time.toString()]" [attr.rowspan]="mSlots[day][time.toString()].length"> {{mSlots[day][time.toString()].name}} </td>
+	</ng-container>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

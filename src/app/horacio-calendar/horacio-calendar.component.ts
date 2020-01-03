@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import students from '../../assets/json/hstudents.json';
 
 @Component({
   selector: 'app-horacio-calendar',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HoracioCalendarComponent implements OnInit {
 
+  mStudents = students
+
   constructor() { }
 
   ngOnInit() {
   }
-
 }

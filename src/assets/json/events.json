@@ -1,0 +1,147 @@
+[
+{ 
+  "name":"First day of lessons", 
+  "date":"2019/09/05", 
+  "desc":"Place description here..."
+},
+{ 
+  "name": "RCMS Concert", 
+  "date": "2019/09/14", 
+  "desc": "Link to concert.."
+},
+{ 
+  "name": "RCMS Concert", 
+  "date": "2019/10/26", 
+  "desc":""
+},
+{ 
+  "name": "MMTA Ensemble Festival", 
+  "date": "2019/11/02", 
+  "desc":"Time: 2 pm"
+},
+{ 
+  "name": "MMTA Theory Exams", 
+  "date": "2019/11/23", 
+  "desc":"Rochester"
+},
+{ 
+  "name": "MMTA Piano Exams, Rochester", 
+  "date": "2019/11/23", 
+  "desc":""
+},
+{ 
+  "name": "Lessons stop (Fall Break)", 
+  "date": "2019/11/28", 
+  "desc":""
+},
+{ 
+  "name": "Lessons resume", 
+  "date": "2019/12/02", 
+  "desc":""
+},
+{ 
+  "name": "RCMS Concert", 
+  "date": "2019/12/14", 
+  "desc":""
+},
+{ 
+  "name": "Lessons stop (Winter Break)", 
+  "date": "2019/12/23", 
+  "desc":""
+},
+{ 
+  "name": "Lessons resume", 
+  "date": "2020/01/06", 
+  "desc":""
+},
+{ 
+  "name": "RCMS Concert", 
+  "date": "2020/01/25", 
+  "desc": "Time: 7:30pm"
+},
+{ 
+  "name": "MMTA Theory Exams, Rochester", 
+  "date": "2020/01/25", 
+  "desc":""
+},
+{ 
+  "name": "MMTA Piano Exams, Rochester", 
+  "date": "2020/01/25", 
+  "desc":""
+},
+{ 
+  "name": "MMTA Contest (District)", 
+  "date": "2020/02/01", 
+  "desc":""
+},
+{ 
+  "name": "SE MN Federation Festival", 
+  "date": "2020/02/08", 
+  "desc":""
+},
+{ 
+  "name": "RCMS Concert", 
+  "date": "2020/02/29", 
+  "desc":"Time: 7:30pm"
+},
+{ 
+  "name": "MMTA Contest (Young Artist)", 
+  "date": "2020/02/29", 
+  "desc":""
+},
+{ 
+  "name": "MMTA Contest (Young Artist)", 
+  "date": "2020/03/01", 
+  "desc":""
+},
+{ 
+  "name": "MMTA Contest (State)", 
+  "date": "2020/03/14", 
+  "desc":""
+},
+{ 
+  "name": "MMTA Contest (State)", 
+  "date": "2020/03/15", 
+  "desc":""
+},
+{ 
+  "name": "Studio Piano Recials", 
+  "date": "2020/03/22", 
+  "desc":""
+},
+{ 
+  "name": "Lessons stop (Spring Break)", 
+  "date": "2020/03/30", 
+  "desc":""
+},
+{ 
+  "name": "Lessons resume", 
+  "date": "2020/04/06", 
+  "desc":""
+},
+{ 
+  "name": "RCMS Concert", 
+  "date": "2020/04/18", 
+  "desc":"Time:7:30pm"
+},
+{ 
+  "name": "MMTA Theory Exams, Rochester", 
+  "date": "2020/04/18", 
+  "desc":""
+},
+{ 
+  "name": "MMTA Piano Exams, Rochester", 
+  "date": "2020/04/18", 
+  "desc":""
+},
+{ 
+  "name": "Last day of lessons", 
+  "date": "2020/05/08", 
+  "desc":""
+},
+{ 
+  "name": "MMTA Honors Concert", 
+  "date": "2020/06/13", 
+  "desc": "Time: 7pm"
+}
+]

@@ -1,0 +1,10 @@
+<li #bahh class="media border-bottom pt-3 pb-3" [class.text-muted]="hasOccurred" [class.font-italic]="hasOccurred">
+  <img src="assets/img/pl.png" class="mr-3" alt="..." height="64px" width="64px">
+    <div class="media-body">
+      <div class="row mt-0 mb-1 mr-4">
+	<div class="col-8"><h5> {{event.name}} </h5></div>
+	<div class="col-4 text-right"><h6> {{dateStr}} </h6> </div>
+      </div>
+      {{event.desc}}
+    </div>
+</li>

@@ -1,52 +1,23 @@
-<div class="row">
-	<div class="container">
-				<h2> 2019-2020 Studio Calendar </h2>
-				<pre> 
-September
-5 (Thu) - First day of lessons
-14 (Sat) - RCMS Concert, 7:30 pm
-
-October
-26 (Sat) - RCMS Concert, 7:30 pm
-
-November
-2 (Sat) - MMTA Ensemble Festival, 2 pm
-23 (Sat) - MMTA Theory Exams, Rochester
-23 (Sat) - MMTA Piano Exams, Rochester
-28 (Thu) - Lessons stop (Fall Break)
-
-December
-2 (Mon) - Lessons resume
-14 (Sat) - RCMS Concert, 7:30 pm
-23 (Mon) - Lessons stop (Winter Break)
-
-January
-6 (Mon) - Lessons resume
-25 (Sat) - RCMS Concert, 7:30 pm
-25 (Sat) - MMTA Theory Exams, Rochester
-25 (Sat) - MMTA Piano Exams, Rochester
-
-February
-1 (Sat) - MMTA Contest (District)
-8 (Sat) - SE MN Federation Festival
-29 (Sat) - RCMS Concert, 7:30 pm
-29 (Sat) - MMTA Contest (Young Artist)
-
-March
-1 (Sun) - MMTA Contest (Young Artist)
-14 (Sat) - MMTA Contest (State)
-15 (Sun) - MMTA Contest (State)
-22 (Sun) - Studio Piano Recitals
-30 (Mon) - Lessons stop (Spring Break)
-
-April
-6 (Mon) - Lessons resume
-18 (Sat) - RCMS Concert, 7:30 pm
-18 (Sat) - MMTA Theory Exams, Rochester
-18 (Sat) - MMTA Piano Exams, Rochester
-
-May
-8 (Fri) - Last day of lessons
-
-June
-13 (Sat) - MMTA Honors Concert, 7 pm
+<div class="row justify-content-center h-100">
+  <div class="col-sm-11 h-100">
+    <div class="card h-100">
+      <h2 class="card-header"> 2019-2020 Studio Calendar </h2>
+      <div class="card-body h-100">
+	<button class="btn m-1" [class.btn-outline-primary]="upClkF" [class.btn-primary]="!upClkF" type="button" (click)="upClk(event)" data-toggle="collapse" data-target="#upEv" aria-expanded="true" aria-controls="upEv"> Upcoming Events </button>
+	<button class="btn m-1" [class.btn-outline-primary]="!pastClkF" [class.btn-primary]="pastClkF" type="button" (click)="pastClk(event)" data-toggle="collapse" data-target="#pastEv" aria-expanded="true" aria-controls="pastEv"> Past Events </button>
+        <div class="h-100 overflow-auto">
+	  <div id="pastEv" class="collapse">
+	    <ul class="list-unstyled">
+	      <app-event *ngFor="let event of pastEvents" [hasOccurred]="true" [event]="event"></app-event>
+	    </ul>
+	  </div>
+	  <div id="upEv" class="collapse show">
+	    <ul class="list-unstyled">
+	      <app-event *ngFor="let event of upcomingEvents" [event]="event"></app-event>
+	    </ul>
+	  </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

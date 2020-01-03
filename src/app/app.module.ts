@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { HoracioComponent } from './horacio/horacio.component';
@@ -17,6 +18,8 @@ import { AdminComponent } from './admin/admin.component';
 import { CurrentStudentsComponent } from './current-students/current-students.component';
 import { StateSelectComponent } from './state-select/state-select.component';
 import { InputMaskAngularModule } from 'input-mask-angular';
+import { EventComponent } from './event/event.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +34,16 @@ import { InputMaskAngularModule } from 'input-mask-angular';
     SnowDayPolicyComponent,
     AdminComponent,
     CurrentStudentsComponent,
-    StateSelectComponent
+    StateSelectComponent,
+    EventComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
     routing,
-    FormsModule,
     ReactiveFormsModule,
-    InputMaskAngularModule
+    InputMaskAngularModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

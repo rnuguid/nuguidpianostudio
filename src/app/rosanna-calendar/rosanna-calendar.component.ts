@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import students from '../../assets/json/rstudents.json';
 
 @Component({
   selector: 'app-rosanna-calendar',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rosanna-calendar.component.css']
 })
 export class RosannaCalendarComponent implements OnInit {
+
+  mStudents = students
 
   constructor() { }
 
