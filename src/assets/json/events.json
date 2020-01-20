@@ -1,13 +1,12 @@
 [
 { 
   "name":"First day of lessons", 
-  "date":"2019/09/05", 
-  "desc":"Place description here..."
+  "date":"2019/09/05"
 },
 { 
   "name": "RCMS Concert", 
   "date": "2019/09/14", 
-  "desc": "Link to concert.."
+  "desc": ""
 },
 { 
   "name": "RCMS Concert", 
@@ -17,7 +16,7 @@
 { 
   "name": "MMTA Ensemble Festival", 
   "date": "2019/11/02", 
-  "desc":"Time: 2 pm"
+  "desc":"Time: 2pm"
 },
 { 
   "name": "MMTA Theory Exams", 
@@ -55,9 +54,10 @@
   "desc":""
 },
 { 
-  "name": "RCMS Concert", 
+  "name": "RCMS Concert (Saxophone, Flute and Piano)", 
   "date": "2020/01/25", 
-  "desc": "Time: 7:30pm"
+  "desc": "Time: 7:30pm",
+  "link": "http://www.rochesterchambermusic.org/saxophone-flute-and-piano.html"
 },
 { 
   "name": "MMTA Theory Exams, Rochester", 
@@ -81,8 +81,7 @@
 },
 { 
   "name": "RCMS Concert", 
-  "date": "2020/02/29", 
-  "desc":"Time: 7:30pm"
+  "date": "2020/02/29" 
 },
 { 
   "name": "MMTA Contest (Young Artist)", 

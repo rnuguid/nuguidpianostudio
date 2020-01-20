@@ -3,7 +3,8 @@ import { Input, Component, OnInit } from '@angular/core';
 export interface EventShape {
   name: string;
   date: Date;
-  desc: string;
+  desc?: string;
+  link?: string;
 };
 
 @Component({

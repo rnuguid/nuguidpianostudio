@@ -5,7 +5,8 @@ import data from '../../assets/json/events.json';
 interface EventShapeStr {
   name: string;
   date: string;
-  desc: string;
+  desc?: string;
+  link?: string;
 };
 
 @Component({
@@ -40,7 +41,7 @@ export class EventsComponent implements OnInit {
 
     // convert EventShapeStr to EventShape
     for (let i in this.items){
-      this.events[i] = {name:this.items[i].name, desc:this.items[i].desc, date:new Date(this.items[i].date)};
+      this.events[i] = {name:this.items[i].name, link: this.items[i].link, desc:this.items[i].desc, date:new Date(this.items[i].date)};
     }
 
     // sort by date, and split into upcoming events and past events.
