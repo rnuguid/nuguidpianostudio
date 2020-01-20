@@ -22,9 +22,7 @@ export class AdmissionComponent implements OnInit {
      // Translate FormGroup's data into FormData
      let fd : FormData = new FormData()
      Object.keys(this.myForm.controls).forEach((k)=>fd.append(k,this.myForm.get(k).value))
-
-    // console.log(this.myForm.getRawValue());
-    // this.http.post("https://formspree.io/xpzqbopg", fd, {responseType : 'json'}).subscribe({next: x=>console.log("Executed!"), error: x=>console.log("ERROR"), complete: ()=>console.log("COMPLETE")})
+     fd.append("_cc", "horacionuguid@gmail.com,rosannanuguid@gmail.com")
 
      this.http.post("https://formspree.io/xpzqbopg", 
 	fd, 
