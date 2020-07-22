@@ -47,8 +47,14 @@ export class EventsComponent implements OnInit {
     // sort by date, and split into upcoming events and past events.
     this.events.sort((a : EventShape, b : EventShape)=> a.date.getTime() - b.date.getTime());
     let currTime : Date = new Date();
-    let ix : number = this.events.findIndex((z) => currTime.getTime() < z.date.getTime());
-    this.pastEvents = this.events.splice(0,ix)
-    this.upcomingEvents = this.events // yeah.. the remaineder are upcomig
+      let ix: number = this.events.findIndex((z) => currTime.getTime() < z.date.getTime());
+      if (ix > -1) {
+          this.pastEvents = this.events.splice(0, ix)
+          this.upcomingEvents = this.events // yeah.. the remaineder are upcomig
+      }
+      else {
+          this.pastEvents = this.events
+          this.upcomingEvents = []
+      }
   }
 }
