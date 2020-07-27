@@ -27,12 +27,12 @@ export class EventsComponent implements OnInit {
   upClkF : boolean = false;
   pastClkF : boolean = false;
 
-  pastClk(event : any)
+  pastClk()
   {
     this.pastClkF = !this.pastClkF
   }
 
-  upClk(event : any)
+  upClk()
   {
     this.upClkF = !this.upClkF
   }

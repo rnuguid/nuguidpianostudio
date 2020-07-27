@@ -3,8 +3,8 @@
         <div class="card h-100">
             <h2 class="card-header"> 2019-2020 Studio Calendar </h2>
             <div class="card-body h-100">
-                <button class="btn m-1" [class.btn-outline-primary]="upClkF" [class.btn-primary]="!upClkF" type="button" (click)="upClk(event)" data-toggle="collapse" data-target="#upEv" aria-expanded="true" aria-controls="upEv"> Upcoming Events </button>
-                <button class="btn m-1" [class.btn-outline-primary]="!pastClkF" [class.btn-primary]="pastClkF" type="button" (click)="pastClk(event)" data-toggle="collapse" data-target="#pastEv" aria-expanded="true" aria-controls="pastEv"> Past Events </button>
+                <button class="btn m-1" [class.btn-outline-primary]="upClkF" [class.btn-primary]="!upClkF" type="button" (click)="upClk()" data-toggle="collapse" data-target="#upEv" aria-expanded="true" aria-controls="upEv"> Upcoming Events </button>
+                <button class="btn m-1" [class.btn-outline-primary]="!pastClkF" [class.btn-primary]="pastClkF" type="button" (click)="pastClk()" data-toggle="collapse" data-target="#pastEv" aria-expanded="true" aria-controls="pastEv"> Past Events </button>
                 <div class="h-100 overflow-auto">
                     <div id="pastEv" class="collapse">
                         <ul class="list-unstyled">

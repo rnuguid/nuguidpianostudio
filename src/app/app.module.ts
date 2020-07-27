@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { routing } from './app.routing';
+import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { HoracioComponent } from './horacio/horacio.component';
 import { RosannaComponent } from './rosanna/rosanna.component';
@@ -40,7 +40,7 @@ import { CalendarComponent } from './calendar/calendar.component';
   ],
   imports: [
     BrowserModule,
-    routing,
+    AppRoutingModule,
     ReactiveFormsModule,
     InputMaskAngularModule,
     HttpClientModule

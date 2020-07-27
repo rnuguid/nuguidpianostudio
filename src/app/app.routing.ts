@@ -1,5 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
-import { ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HoracioComponent } from './horacio/horacio.component';
@@ -27,4 +27,17 @@ const my_routes: Routes = [
 	{path: 'current-students', component: CurrentStudentsComponent },
 ]
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(my_routes);
+// configures NgModule imports and exports
+@NgModule({
+	imports: [RouterModule.forRoot(my_routes)],
+	exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+//export const routing: ModuleWithProviders = RouterModule.forRoot(my_routes);
+
+
+
+
+
+
