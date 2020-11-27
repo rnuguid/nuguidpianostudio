@@ -77,7 +77,7 @@ Some utility routines
 # Check if client has unexpired cookies w/ valid JWT
 # returns True if yes, False otherwise
 def checkCookies():
-    NPS_LOG.debug(self.__class__.__name__)
+    NPS_LOG.debug("hi")
 
     ok = False
     c = web.cookies()
@@ -106,7 +106,7 @@ def checkCookies():
 
 #Prepare HTTP headers, standard response
 def prepHeaders(contentType="text/html", usingCreds=True):
-    NPS_LOG.debug(self.__class__.__name__)
+    NPS_LOG.debug("hi")
     web.header('Content-Type', contentType)
 
     if usingCreds:
@@ -121,7 +121,7 @@ def prepHeaders(contentType="text/html", usingCreds=True):
 
 # Read in entire text file
 def readFile(filename, perms='r'):
-    NPS_LOG.debug(self.__class__.__name__)    
+    NPS_LOG.debug("hi")    
     f = open(filename, perms) # This going to change
     data = f.read() 
     return data   
@@ -243,7 +243,7 @@ class routeRcalendar:
             return ""
 
         prepHeaders(contentType="application/json")
-        data = readFile("./src/assets/json/rstudents.json")
+        data = readFile("../src/assets/json/rstudents.json")
 
         return data
 
@@ -256,7 +256,7 @@ class routeHcalendar:
             return ""
 
         prepHeaders(contentType="application/json")
-        data = readFile("./src/assets/json/hstudents.json")
+        data = readFile("../src/assets/json/hstudents.json")
 
         return data
 
@@ -273,7 +273,7 @@ class routePdfFile:
         filename = user_data["filename"]
         if filename:
             try:
-                data = readFile("./src/assets/pdf/{filename}".format(filename), perms='rb')
+                data = readFile("../src/assets/pdf/{filename}".format(filename), perms='rb')
             except:
                 prepHeaders(usingCreds=False)
                 return "File {filename} no exist".format(filename)

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http'
+import { NPSConstants } from './NPSConstants'
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +10,8 @@ export class AuthenticationService {
 	loggedIn : boolean = false;
 	private isLoggedInSource = new Subject<boolean>();
 	private mLastCall : number = 0;
-	MIN_TIME_BTW_UPDATES_MS : number = 5000;
-	
-	//SERVER_PATH : string = "https://nuguidpianostudio.com/cgi-bin/bknd.py";
-	SERVER_PATH : string = "http://0.0.0.0:8080";
+	static readonly MIN_TIME_BTW_UPDATES_MS : number = 5000;	
+	static readonly SERVER_PATH : string = NPSConstants.SERVER_PATH;
 
     constructor(private http : HttpClient) { }
 
@@ -33,7 +32,7 @@ export class AuthenticationService {
 		let retValSource = new Subject<string>();
 		let retVal$ = retValSource.asObservable();
 
-		this.http.post(this.SERVER_PATH + "/login", 
+		this.http.post(AuthenticationService.SERVER_PATH + "/login", 
 		JSON.stringify(loginData),{responseType : 'text', withCredentials: true}).subscribe(
 				{
 					next: x=> {
@@ -67,7 +66,7 @@ export class AuthenticationService {
 		let retValSource = new Subject<boolean>();
 		let retVal$ = retValSource.asObservable();
 
-		this.http.get(this.SERVER_PATH + "/logout", {responseType: 'text', withCredentials: true}).subscribe(
+		this.http.get(AuthenticationService.SERVER_PATH + "/logout", {responseType: 'text', withCredentials: true}).subscribe(
 		{
 			next: x=>retValSource.next(true),
 			error: e=> retValSource.next(false),
@@ -84,7 +83,7 @@ export class AuthenticationService {
 		}
 		else 
 		{
-			if (Date.now() - this.mLastCall > this.MIN_TIME_BTW_UPDATES_MS)
+			if (Date.now() - this.mLastCall > AuthenticationService.MIN_TIME_BTW_UPDATES_MS)
 			{
 				this._update()
 				this.mLastCall = Date.now()
@@ -95,7 +94,7 @@ export class AuthenticationService {
 	// Call this to request check w/ server abt login status
 	private _update(){
 		//this.http.get("https://nuguidpianostudio.com/cgi-bin/bknd.py/checkLogin").subscribe(
-		this.http.get(this.SERVER_PATH + "/checkLogin", {withCredentials: true}).subscribe(
+		this.http.get(AuthenticationService.SERVER_PATH + "/checkLogin", {withCredentials: true}).subscribe(
 			{
 				next: x => {
 					console.log("next: " + JSON.stringify(x));

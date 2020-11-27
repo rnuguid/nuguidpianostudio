@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-
-//import students from '../../assets/json/rstudents.json';
-
-
-//SERVER_PATH : string = "https://nuguidpianostudio.com/cgi-bin/bknd.py";
-//SERVER_PATH : string = "http://0.0.0.0:8080";
+import { NPSConstants } from '../NPSConstants'
 
 @Component({
   selector: 'app-rosanna-calendar',
@@ -14,9 +9,8 @@ import { HttpClient } from '@angular/common/http'
 })
 export class RosannaCalendarComponent implements OnInit {
 
-//SERVER_PATH : string = "https://nuguidpianostudio.com/cgi-bin/bknd.py";
-SERVER_PATH : string = "http://0.0.0.0:8080";
-  //mStudents = students
+  SERVER_PATH : string = NPSConstants.SERVER_PATH
+  
   mBad : boolean = false;
   mError : any = []
   mStudents : any = [];
