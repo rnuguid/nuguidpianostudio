@@ -12,6 +12,7 @@ import { RosannaCalendarComponent } from './rosanna-calendar/rosanna-calendar.co
 import { SnowDayPolicyComponent } from './snow-day-policy/snow-day-policy.component';
 import { AdminComponent } from './admin/admin.component';
 import { CurrentStudentsComponent } from './current-students/current-students.component';
+import { LoginComponent } from './login/login.component';
 
 const my_routes: Routes = [
 	{path: 'home', component: HomeComponent },
@@ -25,6 +26,7 @@ const my_routes: Routes = [
 	{path: 'admin', component: AdminComponent },
 	{path: 'test', redirectTo: '/assets/pdf/test.pdf'},
 	{path: 'current-students', component: CurrentStudentsComponent },
+	{path: 'login', component: LoginComponent },
 ]
 
 // configures NgModule imports and exports

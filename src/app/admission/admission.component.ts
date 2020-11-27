@@ -42,6 +42,7 @@ export class AdmissionComponent implements OnInit {
 
   ngOnInit() {}
 
+  loggedIn : boolean = false;
   srvRspRx : boolean = false;
   serverOK : boolean = false; 
   clientOK : boolean = false;

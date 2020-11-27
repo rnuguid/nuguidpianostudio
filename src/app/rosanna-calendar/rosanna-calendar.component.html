@@ -3,13 +3,16 @@
     <div class="card overflow-auto h-100">
       <h4 class="card-header"> Mrs. Nuguid's Teaching Schedule (2019-2020)</h4>
       <div class="card-body">
-	<app-calendar startTime="3:00" 
-                      [incTime]="15"
-                      endTime="7:59"
-                     [mStudents]="mStudents"
-                     [days]="['Monday','Tuesday','Wednesday','Thursday','Friday']"> 
-        </app-calendar>
-      </div>
-    </div>
-  </div>
+       <app-calendar *ngIf=mGotStudents 
+       startTime="3:00" 
+       [incTime]="15"
+       endTime="7:59"
+       [mStudents]="mStudents"
+       [days]="['Monday','Tuesday','Wednesday','Thursday','Friday']"> 
+     </app-calendar>
+     <div *ngIf="!mGotStudents && !mBad"> Loading calendar ... </div>
+        <div *ngIf=mBad> Uh oh, you are ... not logged in... </div>
+   </div>
+ </div>
+</div>
 </div>

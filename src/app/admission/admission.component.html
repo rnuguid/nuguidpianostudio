@@ -1,134 +1,131 @@
 <div class="row justify-content-center h-100">
-  <div class="col-sm-11 h-100">
-    <div class="card h-100">
-      <h4 class="card-header"> Admission </h4>
-	  <div *ngIf="submitted && !clientOK" class="alert alert-warning alert-dismissible fade show mb-0">
-            <h6 class="alert-header"> Sorry, unable to process this admission form. Please ensure all fields are properly filled out and try again. </h6>
-            <button type="button" class="close" (click)="submitted = false" aria-label="Close"> <span aria-hidden="true">&times;</span></button>
-          </div>
-	  <div *ngIf="submitted && clientOK && !srvRspRx" class="alert alert-success mb-0">
-	    <h6 class="alert-header"> Looks good!  Sending form... <div class="spinner-border spinner-border-sm ml-5 mb-1"> </div> </h6>
-          </div>
-	  <div *ngIf="submitted && clientOK && srvRspRx && serverOK" class="alert alert-success mb-0">
-            <h6 class="alert-header"> We received your admission form. Thanks for the submission! </h6>
-          </div>
-	  <div *ngIf="submitted && clientOK && srvRspRx && !serverOK" class="alert alert-warning alert-dismissible fade show mb-0">
-            <h6 class="alert-header"> The server is not responding properly.  Please try again later, or reach out via e-mail to horacio@nuguidpianostudio.com. </h6>
-            <button type="button" class="close" (click)="submitted = false" aria-label="Close"> <span aria-hidden="true">&times;</span></button>
-          </div>
-      <div class="card-body overflow-auto h-100">
-	<p class="card-text"> Mrs. Rosanna Nuguid offers 30 min and 45 min private lessons to K-8 students and pre-school students (by special arrangement).  Dr. Horacio Nuguid offers 1 hour private lessons to high school students and advanced adults.  To be considered for admission, complete the form below.  We will contact you to schedule try out lessons only if we have available space. For transfer students, we would need your current piano teacher to e-mail or call us with his/her recommendation.  Please note that submission of the information requested is not a guarantee for admission into the studio.</p>
-	<form name="admission" (ngSubmit)="onSubmit()" [formGroup]="myForm" #myform="ngForm">
-	<!-- <form name="admission" method="POST" action="www.google.com" (ngSubmit)="onSubmit(myform);" [formGroup]="myForm" #myform="ngForm"> -->
-	  <!--<input type="hidden" name="_cc" value="raf.nuguid@gmail.com"/>-->
-	  <!--<input type="hidden" name="_cc" value="rosannanuguid@gmail.com"/>-->
-          <div class="row"> 
-	    <div class="form-group col-md-8">
-	      <label for="id_admission_name">Student Name</label>
-	      <input required type="text" class="form-control" id="id_admission_name" placeholder="student name"  name="admission_name" formControlName="name" required/> 
-	      <div class="invalid-feedback">
-	       Student name is required.
-	      </div>
-	    </div>	
-	    <div class="form-group col-md-4">
-	      <label for="id_admission_date">Birth Date (MM/DD/YYYY)</label>
-	      <input type="date" id="id_admission_date" class="form-control" placeholder="MM/DD/YYYY" formControlName="birthDate"  name="admission_date" required/> 
-	    </div>
-          </div>
-          <div class="row">
-	    <div class="form-group col-sm-8">
-	      <label for="id_admission_school">School Name</label>
-	      <input type="text" class="form-control" placeholder="school name" formControlName="schoolName" name="admission_school" required/>
-	      <div class="invalid-feedback">
-	       School name is required.
-	      </div>
-	    </div>
-	    <div class="form-group col-sm-4">
-	      <label for="id_admission_grade"> Grade of Student </label>
-	      <select class="form-control" formControlName="grade" required>
-		<option value={{grade}} *ngFor="let grade of grades">{{grade}}</option>
-	      </select>
-	      <div class="invalid-feedback">
-	       Grade level is required
-	      </div>
-	    </div>
-          </div>
-          <div class="row">
-	    <div class="form-group col-sm-6">
-	      <label for="id_admission_parent_1"> Guardian Name, 1 </label>
-	      <input type="text" class="form-control"  placeholder="guardian name (1)" formControlName="gname1" name="admission_parent_1" required/> 
-	      <div class="invalid-feedback">
-	       Guardian name (1) is required
-	      </div>
-	    </div>
-	    <div class="form-group col-sm-6">
-	      <label for="id_admission_parent_2"> Guardian Name, 2 <span class="font-italic"> (Optional) </span> </label>
-	      <input type="text" class="form-control no-validate"  placeholder="guardian name (2)" formControlName="gname2" name="admission_parent_2"/> 
-	    </div>
-          </div>
-          <div class="row">
-	    <div class="form-group col-sm-6">
-	      <label for="id_admission_email"> Email </label>
-	      <input type="e-mail" class="form-control"  placeholder="email"  formControlName="email" name="admission_email" autocomplete="email" required/>
-	      <div class="invalid-feedback">
-		Please provide a valid e-mail address.
-	      </div>
-	    </div>
-	    <div class="form-group col-sm-6">
-	      <label for="id_admission_phone"> Phone # </label>
-	      <input type="tel" class="form-control" [mask]="'{+1} ([000]) [000] [0000]'" (maskFilled)=mf($event) placeholder="phone #"  formControlName="phone" name="admission_phone" required/>
-	      <div class="invalid-feedback">
-		Please provide a valid phone number.
-	      </div>
-	    </div>
-	  </div>
-	  <div class="form-group">
-	    <label for="id_admission_address"> Street Address </label>
-	    <input type="text" class="form-control"  placeholder="street address"  formControlName="sa" name="admission_address" required/>
-	      <div class="invalid-feedback">
-		Please provide a valid street address.
-	      </div>
-	  </div>
-          <div class="row">
-	    <div class="form-group col-sm-4">
-	      <label for="id_admission_city"> City </label>
-	      <input type="text" class="form-control"  placeholder="city"  formControlName="city" name="admission_city" required/>
-	      <div class="invalid-feedback">
-		Please provide a valid city.
-	      </div>
-	    </div>
-	    <div class="form-group col-sm-4">
-	      <label> State </label>
-	      <select class="form-control" formControlName="state" name="admission_state" required>
-		<option *ngFor="let state of states" [value]="state.abbreviation" [selected]="!state.name"> {{state.name}} </option>
-	      </select>
-	      <div class="invalid-feedback">
-		Please select a valid state.
-	      </div>
-	    </div>
-	    <div class="form-group col-sm-4">
-	      <label for="id_admission_zip"> Zip Code </label>
-	      <input  id="id_admission_zip" type="text" class="form-control"  placeholder="zip code"  formControlName="zip" name="admission_zip" required/>
-	      <div class="invalid-feedback">
-		Please provide 5-digit zip code.
-	      </div>
-	    </div>
-          </div>
-	  <div class="form-group">
-	    <label> Describe any prior piano studies (please include names of teachers) </label>
-	    <textarea class="form-control" formControlName="pianostudies"  name="pianostudies" placeholder="describe any prior piano studies (please include names of teachers)" style="height:10rem"></textarea>
-	  </div>
-	  <div class="form-group">
-	    <label> Please list all current musical activities </label>
-	    <textarea class="form-control"  name="musicalact" formControlName="musicalact" placeholder="please list all current musical activities" style="height:10rem"></textarea>
-	  </div>
-	  <div class="form-group">
-	    <label> Please list any other extracurricular activities </label>
-	    <textarea class="form-control"  name="extracurr" formControlName="extracurr" placeholder="please list any other extracurricular activities" style="height:10rem"></textarea>
-	  </div>
-	  <button type="submit" class="btn btn-primary" [disabled]="this.srvRspRx && this.serverOK" value="Send"  id="submit"> Apply </button>
-	</form>
-      </div>
-    </div>
-  </div>
+	<div class="col-sm-11 h-100">
+		<div class="card h-100">
+			<h4 class="card-header"> Admission </h4>
+			<div *ngIf="submitted && !clientOK" class="alert alert-warning alert-dismissible fade show mb-0">
+				<h6 class="alert-header"> Sorry, unable to process this admission form. Please ensure all fields are properly filled out and try again. </h6>
+				<button type="button" class="close" (click)="submitted = false" aria-label="Close"> <span aria-hidden="true">&times;</span></button>
+			</div>
+			<div *ngIf="submitted && clientOK && !srvRspRx" class="alert alert-success mb-0">
+				<h6 class="alert-header"> Looks good!  Sending form... <div class="spinner-border spinner-border-sm ml-5 mb-1"> </div> </h6>
+			</div>
+			<div *ngIf="submitted && clientOK && srvRspRx && serverOK" class="alert alert-success mb-0">
+				<h6 class="alert-header"> We received your admission form. Thanks for the submission! </h6>
+			</div>
+			<div *ngIf="submitted && clientOK && srvRspRx && !serverOK" class="alert alert-warning alert-dismissible fade show mb-0">
+				<h6 class="alert-header"> The server is not responding properly.  Please try again later, or reach out via e-mail to horacio@nuguidpianostudio.com. </h6>
+				<button type="button" class="close" (click)="submitted = false" aria-label="Close"> <span aria-hidden="true">&times;</span></button>
+			</div>
+			<div class="card-body overflow-auto h-100">
+				<p class="card-text"> Mrs. Rosanna Nuguid offers 30 min and 45 min private lessons to K-8 students and pre-school students (by special arrangement).  Dr. Horacio Nuguid offers 1 hour private lessons to high school students and advanced adults.  To be considered for admission, complete the form below.  We will contact you to schedule try out lessons only if we have available space. For transfer students, we would need your current piano teacher to e-mail or call us with his/her recommendation.  Please note that submission of the information requested is not a guarantee for admission into the studio.</p>
+				<form name="admission" (ngSubmit)="onSubmit()" [formGroup]="myForm" #myform="ngForm">
+					<div class="row"> 
+						<div class="form-group col-md-8">
+							<label for="id_admission_name">Student Name</label>
+							<input required type="text" class="form-control" id="id_admission_name" placeholder="student name"  name="admission_name" formControlName="name" required/> 
+							<div class="invalid-feedback">
+								Student name is required.
+							</div>
+						</div>	
+						<div class="form-group col-md-4">
+							<label for="id_admission_date">Birth Date (MM/DD/YYYY)</label>
+							<input type="date" id="id_admission_date" class="form-control" placeholder="MM/DD/YYYY" formControlName="birthDate"  name="admission_date" required/> 
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-8">
+							<label for="id_admission_school">School Name</label>
+							<input type="text" class="form-control" placeholder="school name" formControlName="schoolName" name="admission_school" required/>
+							<div class="invalid-feedback">
+								School name is required.
+							</div>
+						</div>
+						<div class="form-group col-sm-4">
+							<label for="id_admission_grade"> Grade of Student </label>
+							<select class="form-control" formControlName="grade" required>
+								<option value={{grade}} *ngFor="let grade of grades">{{grade}}</option>
+							</select>
+							<div class="invalid-feedback">
+								Grade level is required
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-6">
+							<label for="id_admission_parent_1"> Guardian Name, 1 </label>
+							<input type="text" class="form-control"  placeholder="guardian name (1)" formControlName="gname1" name="admission_parent_1" required/> 
+							<div class="invalid-feedback">
+								Guardian name (1) is required
+							</div>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="id_admission_parent_2"> Guardian Name, 2 <span class="font-italic"> (Optional) </span> </label>
+							<input type="text" class="form-control no-validate"  placeholder="guardian name (2)" formControlName="gname2" name="admission_parent_2"/> 
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-6">
+							<label for="id_admission_email"> Email </label>
+							<input type="e-mail" class="form-control"  placeholder="email"  formControlName="email" name="admission_email" autocomplete="email" required/>
+							<div class="invalid-feedback">
+								Please provide a valid e-mail address.
+							</div>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="id_admission_phone"> Phone # </label>
+							<input type="tel" class="form-control" [mask]="'{+1} ([000]) [000] [0000]'" (maskFilled)=mf($event) placeholder="phone #"  formControlName="phone" name="admission_phone" required/>
+							<div class="invalid-feedback">
+								Please provide a valid phone number.
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="id_admission_address"> Street Address </label>
+						<input type="text" class="form-control"  placeholder="street address"  formControlName="sa" name="admission_address" required/>
+						<div class="invalid-feedback">
+							Please provide a valid street address.
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-4">
+							<label for="id_admission_city"> City </label>
+							<input type="text" class="form-control"  placeholder="city"  formControlName="city" name="admission_city" required/>
+							<div class="invalid-feedback">
+								Please provide a valid city.
+							</div>
+						</div>
+						<div class="form-group col-sm-4">
+							<label> State </label>
+							<select class="form-control" formControlName="state" name="admission_state" required>
+								<option *ngFor="let state of states" [value]="state.abbreviation" [selected]="!state.name"> {{state.name}} </option>
+							</select>
+							<div class="invalid-feedback">
+								Please select a valid state.
+							</div>
+						</div>
+						<div class="form-group col-sm-4">
+							<label for="id_admission_zip"> Zip Code </label>
+							<input  id="id_admission_zip" type="text" class="form-control"  placeholder="zip code"  formControlName="zip" name="admission_zip" required/>
+							<div class="invalid-feedback">
+								Please provide 5-digit zip code.
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label> Describe any prior piano studies (please include names of teachers) </label>
+						<textarea class="form-control" formControlName="pianostudies"  name="pianostudies" placeholder="describe any prior piano studies (please include names of teachers)" style="height:10rem"></textarea>
+					</div>
+					<div class="form-group">
+						<label> Please list all current musical activities </label>
+						<textarea class="form-control"  name="musicalact" formControlName="musicalact" placeholder="please list all current musical activities" style="height:10rem"></textarea>
+					</div>
+					<div class="form-group">
+						<label> Please list any other extracurricular activities </label>
+						<textarea class="form-control"  name="extracurr" formControlName="extracurr" placeholder="please list any other extracurricular activities" style="height:10rem"></textarea>
+					</div>
+					<button type="submit" class="btn btn-primary" [disabled]="this.srvRspRx && this.serverOK" value="Send"  id="submit"> Apply </button>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>

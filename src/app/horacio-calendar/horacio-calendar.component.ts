@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import students from '../../assets/json/hstudents.json';
+import { HttpClient } from '@angular/common/http'
 
 @Component({
   selector: 'app-horacio-calendar',
@@ -8,10 +8,21 @@ import students from '../../assets/json/hstudents.json';
 })
 export class HoracioCalendarComponent implements OnInit {
 
-  mStudents = students
+SERVER_PATH : string = "http://0.0.0.0:8080";
+  //mStudents = students
+  mBad : boolean = false;
+  mError : any = []
+  mStudents : any = [];
+  mGotStudents : boolean = false;
 
-  constructor() { }
+
+  constructor(private http : HttpClient) { }
 
   ngOnInit() {
+  	this.http.get(this.SERVER_PATH + "/hcalendar", {withCredentials: true, responseType: 'json'}).subscribe(
+  	{
+  		next: x => {this.mGotStudents = true; this.mStudents = x},
+  		error: x => {this.mError = x; this.mBad = true},
+  	})  	
   }
 }

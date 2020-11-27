@@ -20,6 +20,7 @@ import { StateSelectComponent } from './state-select/state-select.component';
 import { InputMaskAngularModule } from 'input-mask-angular';
 import { EventComponent } from './event/event.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     CurrentStudentsComponent,
     StateSelectComponent,
     EventComponent,
-    CalendarComponent
+    CalendarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

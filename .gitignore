@@ -1,5 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# lets not have this in repo
+db_options.py
+
 # compiled output
 /dist
 /tmp
