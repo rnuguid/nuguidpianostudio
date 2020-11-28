@@ -11,7 +11,7 @@ import logging
 # Setup logging
 logging.basicConfig(filename="../blah.log", format='%(asctime)s - %(funcName)s - %(levelname)s - %(message)s')
 NPS_LOG = logging.getLogger("npsLogger")
-NPS_LOG.setLevel(logging.DEBUG)
+NPS_LOG.setLevel(logging.INFO)
 
 NPS_LOG.info("bknd enter")
 NPS_LOG.debug(os.environ)
@@ -58,7 +58,7 @@ urls = (
     '/(.*)', 'routeDefault'
 )
 
-web.config.debug = True
+web.config.debug = False
 login_query = "SELECT password FROM accounts WHERE username = %s"
 MAX_SECONDS_LOGGED_IN = 3600 * 48 # 2 days max
 OUR_COOKIE = "npscookie"
@@ -110,7 +110,8 @@ def prepHeaders(contentType="text/html", usingCreds=True):
     web.header('Content-Type', contentType)
 
     if usingCreds:
-        web.header('Access-Control-Allow-Origin', web.ctx.env['HTTP_ORIGIN'])
+        #web.header('Access-Control-Allow-Origin', web.ctx.env['HTTP_ORIGIN'])
+        web.header('Access-Control-Allow-Origin', "https://nuguidpianostudio.com")
         web.header('Access-Control-Allow-Credentials', 'true')    
 
 
@@ -238,12 +239,12 @@ class routeLogout:
 class routeRcalendar:
     def GET(self):
         NPS_LOG.debug(self.__class__.__name__)
-
         if not checkCookies():
-            return ""
+            prepHeaders()
+            return "not logged in"
 
         prepHeaders(contentType="application/json")
-        data = readFile("../src/assets/json/rstudents.json")
+        data = readFile("../assets/json/rstudents.json")
 
         return data
 
@@ -253,10 +254,11 @@ class routeHcalendar:
         NPS_LOG.debug(self.__class__.__name__)
 
         if not checkCookies():
-            return ""
+            prepHeaders()
+            return "not logged in"
 
         prepHeaders(contentType="application/json")
-        data = readFile("../src/assets/json/hstudents.json")
+        data = readFile("../assets/json/hstudents.json")
 
         return data
 
@@ -271,12 +273,13 @@ class routePdfFile:
 
         user_data = web.input(filename=None)
         filename = user_data["filename"]
+        NPS_LOG.debug("Attempt to read file: %s" % filename)
         if filename:
             try:
-                data = readFile("../src/assets/pdf/{filename}".format(filename), perms='rb')
+                data = readFile("../assets/pdf/%s" % filename, perms='rb')
             except:
                 prepHeaders(usingCreds=False)
-                return "File {filename} no exist".format(filename)
+                return "File %s no exist" % filename
             else:
                 prepHeaders(contentType="application/pdf", usingCreds=False)
                 return data

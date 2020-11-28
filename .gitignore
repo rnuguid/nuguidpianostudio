@@ -3,6 +3,9 @@
 # lets not have this in repo
 db_options.py
 
+# we restrict access to these, should probably not have in repo either
+/src/assets/pdf
+
 # compiled output
 /dist
 /tmp
