@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http'
-import { NPSConstants } from './NPSConstants'
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +10,7 @@ export class AuthenticationService {
 	private isLoggedInSource = new Subject<boolean>();
 	private mLastCall : number = 0;
 	static readonly MIN_TIME_BTW_UPDATES_MS : number = 5000;	
-	static readonly SERVER_PATH : string = NPSConstants.SERVER_PATH;
+	static readonly SERVER_PATH : string = "/cgi-bin/wbknd.sh";
 
     constructor(private http : HttpClient) { }
 

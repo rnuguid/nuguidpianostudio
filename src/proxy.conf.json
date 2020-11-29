@@ -1,0 +1,9 @@
+{
+  "/cgi-bin/wbknd.sh": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "pathRewrite": {
+      "^/cgi-bin/wbknd.sh": ""
+    }    
+  }
+}

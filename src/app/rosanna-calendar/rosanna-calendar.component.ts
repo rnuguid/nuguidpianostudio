@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { NPSConstants } from '../NPSConstants'
 
 @Component({
   selector: 'app-rosanna-calendar',
@@ -9,7 +8,7 @@ import { NPSConstants } from '../NPSConstants'
 })
 export class RosannaCalendarComponent implements OnInit {
 
-  SERVER_PATH : string = NPSConstants.SERVER_PATH
+  SERVER_PATH : string = "/cgi-bin/wbknd.sh";
   
   mBad : boolean = false;
   mError : any = []
