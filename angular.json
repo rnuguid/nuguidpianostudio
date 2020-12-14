@@ -121,6 +121,9 @@
               "devServerTarget": "nuguidpianostudio:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "npsdeploy:deploy"
         }
       }
     }

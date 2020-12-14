@@ -1,0 +1,9 @@
+{
+  "builders": {
+    "deploy": {
+      "implementation": "./deploy",
+      "schema": "./src/schema.json",
+      "description": "deploy site."
+    }
+  }
+}
