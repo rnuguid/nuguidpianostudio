@@ -2,9 +2,13 @@
 
 # lets not have this in repo
 db_options.py
-
+db_options.pyc
+__pycache__
 # we restrict access to these, should probably not have in repo either
 /src/assets/pdf
+
+# lets not store all the backup tar.gz files 
+/tar_dists
 
 # compiled output
 /dist
@@ -14,7 +18,7 @@ db_options.py
 /bazel-out
 
 # dependencies
-/node_modules
+node_modules
 
 # profiling files
 chrome-profiler-events*.json
