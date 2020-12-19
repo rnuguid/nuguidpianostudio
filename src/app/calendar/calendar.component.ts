@@ -95,7 +95,8 @@ export class CalendarComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-
+    if (this.mStudents == undefined || this.days == undefined) return;
+    
     this.mStartTime = new CalendarTime(this.startTime)
     this.mEndTime = new CalendarTime(this.endTime)
     this.mIncTime = new CalendarTime(this.incTime)
